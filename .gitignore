@@ -3,3 +3,8 @@ Terrain-Classification/*
 output/*
 data/*
 downloads/*
+Percentages.ipynb
+results.csv
+Label\ Maker.ipynb
+.idea/
+models/*

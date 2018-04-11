@@ -5,6 +5,7 @@ from __future__ import print_function
 import cv2
 import numpy as np
 import math
+import urllib
 from keras.utils import to_categorical
 
 
@@ -67,19 +68,5 @@ def retrieve_image(img, pos, slice_height, slice_width):
 
     return crop_2d(img, tl_corner, slice_height, slice_width)
 
-
-def input_image_generator(image_list, label_list, image_size, ratio, n_slices):
-    num_classes = len(list(set(label_list)))
-
-    while True:
-
-        for image_name, label in zip(image_list, label_list):
-            img = cv2.imread(image_name)
-            img_resize = cv2.resize(img, image_size)
-
-            slices = prepare_images(img_resize, image_size, ratio, n_slices)
-
-            labels = np.full((slices.shape[0]), label)
-            one_hot_labels = to_categorical(labels, num_classes=num_classes)
-
-            yield slices, one_hot_labels
+def download_image(url, file_name):
+    return urllib.urlretrieve(url, file_name)
