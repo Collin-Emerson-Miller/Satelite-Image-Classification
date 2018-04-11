@@ -8,3 +8,4 @@ results.csv
 Label\ Maker.ipynb
 .idea/
 models/*
+samples/*
