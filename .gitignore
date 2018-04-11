@@ -1,8 +1,5 @@
-images/*
 Terrain-Classification/*
-train/*
 .ipynb_checkpoints/*
-foo/*
-sat.ipynb
-test/*
 output/*
+data/*
+downloads/*
